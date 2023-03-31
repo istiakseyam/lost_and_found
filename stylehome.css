@@ -1,0 +1,94 @@
+:root {
+  --main-color: #009688;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  margin-left: 200px;
+  padding-bottom: 20px;
+}
+
+main h2 {
+  color: #000;
+  text-align: center;
+  padding: 20px;
+}
+
+.items {
+  width: 100%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.product {
+  position: relative;
+  width: 230px;
+  height: 100%;
+  box-shadow: 0 5px 5px #8a8a8a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 20px 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  text-align: center;
+  place-content: center;
+}
+
+.product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 5px #8a8a8a;
+  border: 1px solid #009688;
+}
+
+.product h3 {
+  text-align: center;
+  padding: 10px 0 5px 0;
+}
+
+.product p {
+  font-size: 13px;
+  line-height: 25px;
+  padding-bottom: 10px;
+}
+
+.image {
+  display: grid;
+  place-content: center;
+}
+
+.image img {
+  width: 200px;
+}
+
+.claim {
+  position: relative;
+}
+
+.claim button {
+  padding: 7px;
+  width: 100px;
+  border: 1px solid #009688;
+  border-radius: 20px;
+  background-color: #009688;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.claim button:hover {
+  transform: scale(1);
+  background-color: transparent;
+  color: #009688;
+}
