@@ -123,6 +123,7 @@ button:hover {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"] {
   margin: 10px 0 10px 0;
   width: 100%;
@@ -132,13 +133,7 @@ input[type="password"] {
   border-bottom: 1px solid #8a8a8a;
   background: transparent;
   outline: none;
-  color: #fff;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus {
   color: #000;
-  outline: none;
 }
 
 .signup button a,
