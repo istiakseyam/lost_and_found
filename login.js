@@ -1,4 +1,4 @@
-function validateform(){  
+function lform(){  
     var email=document.login.email.value;  
     var password=document.login.password.value;  
       
