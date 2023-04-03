@@ -1,3 +1,5 @@
+<!-- username: admin ; password:admin -->
+
 <?php include('../config/constants.php'); ?>
 
 <html>
