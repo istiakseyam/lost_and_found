@@ -59,7 +59,6 @@
                         $sql3 = "SELECT * FROM tbl_location";
                        
                         $res3 = mysqli_query($conn, $sql3);
-                        //Count Rows
                         $count3 = mysqli_num_rows($res3);
                     ?>
 

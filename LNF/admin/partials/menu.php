@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <link rel="stylesheet"
     href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     </head>
     
@@ -48,13 +49,13 @@
         </li>
         <li>
           <a href="manage-category.php">
-            <span class="icon"><i class="fas fa-exclamation"></i></span>
+            <span class="icon"><i class="fa fa-get-pocket"></i></span>
             <span class="item">Item Category</span>
           </a>
         </li>
         <li>
           <a href="manage-location.php">
-            <span class="icon"><i class="fas fa-exclamation"></i></span>
+            <span class="icon"><i class="	fas fa-map-marker-alt"></i></span>
             <span class="item">Item Location</span>
           </a>
         </li>
@@ -70,8 +71,9 @@
             <span class="item">Logout</span>
           </a>
         </li>
-      
-  
+       
+       
+    
        
       </ul>
     </div>
