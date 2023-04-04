@@ -52,7 +52,6 @@
         ?>
         <br><br>
 
-                <!-- Button to Add Admin -->
                 <a href="<?php echo SITEURL; ?>admin/add-category.php" class="btn-primary">Add Category</a>
 
                 <br /><br /><br />
@@ -114,8 +113,7 @@
                         }
                         else
                         {
-                            //WE do not have data
-                            //We'll display the message inside table
+                          
                             ?>
 
                             <tr>

@@ -1,10 +1,12 @@
+
+
 <!-- username: admin ; password:admin -->
 
 <?php include('../config/constants.php'); ?>
 
 <html>
     <head>
-        <title>Login - Food Order System</title>
+        <title>Lost & Found - Admin Login</title>
         <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -18,10 +20,7 @@
 
     <body>
         
-    
 
-          
-            
 
             <div class="container">
       <nav>
@@ -44,7 +43,7 @@
 
       <div class="alogin">
 
-            <!-- Login Form Starts HEre -->
+           
             <form action="" method="POST" >
             <h1>Admin Login</h1>
           <p>Please fill in this form to access your account</p>

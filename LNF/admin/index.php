@@ -1,7 +1,6 @@
 
 <?php include('partials/menu.php'); ?>
 
-        <!-- Main Content Section Starts -->
         <div class="main-content">
             <div class="wrapper">
                 <h1> Admin Dashboard</h1>
@@ -20,11 +19,11 @@
 
 
                     <?php 
-                        //Sql Query 
+                       
                         $sql = "SELECT * FROM tbl_category";
-                        //Execute Query
+                     
                         $res = mysqli_query($conn, $sql);
-                        //Count Rows
+                        
                         $count = mysqli_num_rows($res);
                     ?>
 
@@ -38,11 +37,11 @@
                 
                 <div class="items">
                     <?php 
-                        //Sql Query 
+                    
                         $sql2 = "SELECT * FROM tbl_item";
-                        //Execute Query
+                        
                         $res2 = mysqli_query($conn, $sql2);
-                        //Count Rows
+                       
                         $count2 = mysqli_num_rows($res2);
                     ?>
 
@@ -56,9 +55,9 @@
                 <div class="items">
                     
                     <?php 
-                        //Sql Query 
+                      
                         $sql3 = "SELECT * FROM tbl_location";
-                        //Execute Query
+                       
                         $res3 = mysqli_query($conn, $sql3);
                         //Count Rows
                         $count3 = mysqli_num_rows($res3);

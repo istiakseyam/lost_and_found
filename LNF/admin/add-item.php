@@ -1,7 +1,5 @@
 
-
 <?php include('partials/menu.php'); ?>
-
 <div class="main-content">
     <div class="wrapper">
         <h1>Post Item</h1>
@@ -19,8 +17,6 @@
         <form action="" method="POST" enctype="multipart/form-data">
         
         <?php 
-
-
 if(isset($_POST['submit']))
 {
 
@@ -52,33 +48,32 @@ if(isset($_POST['submit']))
     
     if(isset($_FILES['image']['name']))
     {
-        
+      
         $image_name = $_FILES['image']['name'];
 
        
         if($image_name!="")
         {
-            
+         
             $ext = end(explode('.', $image_name));
 
-            
-            $image_name = "Food-Name-".rand(0000,9999).".".$ext; 
+          
+            $image_name = "Item-Name-".rand(0000,9999).".".$ext; //New Image Name May Be "Food-Name-657.jpg"
 
-            
             $src = $_FILES['image']['tmp_name'];
 
-     
-            $dst = "../images/food/".$image_name;
+            $dst = "../images/Item/".$image_name;
+
 
             $upload = move_uploaded_file($src, $dst);
 
             
             if($upload==false)
             {
-             
+              
                 $_SESSION['upload'] = "<div class='error'>Failed to Upload Image.</div>";
-                header('location:'.SITEURL.'admin/add-item.php');
-                //STop the process
+                header('location:'.SITEURL.'admin/add-food.php');
+                
                 die();
             }
 
@@ -89,10 +84,6 @@ if(isset($_POST['submit']))
     {
         $image_name = ""; 
     }
-
-    
-
-   
     $sql2 = "INSERT INTO tbl_item SET 
         title = '$title',
         description = '$description',
@@ -104,7 +95,6 @@ if(isset($_POST['submit']))
         date= '$date'
     ";
 
-  
     $res2 = mysqli_query($conn, $sql2);
 
     if($res2 == true)
@@ -115,12 +105,12 @@ if(isset($_POST['submit']))
     }
     else
     {
-        //FAiled to Insert Data
+
         $_SESSION['add'] = "<div class='error'>Failed to Add Item.</div>";
         header('location:'.SITEURL.'admin/manage-item.php');
     }
 
-    
+
 }
 
 ?>
@@ -145,10 +135,7 @@ if(isset($_POST['submit']))
                 <tr>
                     <td>Date: </td>
                     <td>
-                        <input type="date" name="date">
-                        
-
-                        
+                        <input type="date" name="date">   
                     </td>
                 </tr>
 
@@ -158,7 +145,6 @@ if(isset($_POST['submit']))
                         <input type="file" name="image">
                     </td>
                 </tr>
-             
                 <tr>
                     <td>Category: </td>
                     <td>
@@ -179,7 +165,7 @@ if(isset($_POST['submit']))
                                     
                                     while($row=mysqli_fetch_assoc($res))
                                     {
-                                        //get the details of categories
+                                       
                                         $id = $row['id'];
                                         $title = $row['title'];
 
@@ -197,15 +183,12 @@ if(isset($_POST['submit']))
                                     <option value="0">No Category Found</option>
                                     <?php
                                 }
-                            
-
-                             
                             ?>
 
                         </select>
                     </td>
                 </tr>
-     <tr>
+                <tr>
                     <td>Location: </td>
                     <td>
                         <select name="location">
@@ -226,7 +209,7 @@ if(isset($_POST['submit']))
                                    
                                     while($row=mysqli_fetch_assoc($res))
                                     {
-                                        //get the details of categories
+                                      
                                         $id = $row['id'];
                                         $title = $row['title'];
 

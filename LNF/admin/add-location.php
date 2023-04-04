@@ -24,7 +24,7 @@
 
         <br><br>
 
-        <!-- Add CAtegory Form Starts -->
+     
         <form action="" method="POST" enctype="multipart/form-data">
 
             <table class="tbl-30">
@@ -105,13 +105,13 @@
                 if($res==true)
                 {
                    
-                    $_SESSION['add'] = "<div class='success'>Category Added Successfully.</div>";
+                    $_SESSION['add'] = "<div class='success'>Location is added successfully!</div>";
                     header('location:'.SITEURL.'admin/manage-location.php');
                 }
                 else
                 {
                     
-                    $_SESSION['add'] = "<div class='error'>Failed to Add Category.</div>";
+                    $_SESSION['add'] = "<div class='error'>Failed to Add Location.</div>";
                     header('location:'.SITEURL.'admin/add-location.php');
                 }
             }

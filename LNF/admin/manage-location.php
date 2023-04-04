@@ -52,7 +52,6 @@
         ?>
         <br><br>
 
-                <!-- Button to Add Admin -->
                 <a href="<?php echo SITEURL; ?>admin/add-location.php" class="btn-primary">Add Location</a>
 
                 <br /><br /><br />
@@ -112,8 +111,7 @@
                         }
                         else
                         {
-                            //WE do not have data
-                            //We'll display the message inside table
+                         
                             ?>
 
                             <tr>

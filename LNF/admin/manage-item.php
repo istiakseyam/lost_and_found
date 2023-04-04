@@ -6,7 +6,7 @@
 
         <br /><br />
 
-                <!-- Button to Add Admin -->
+              
                 <a href="<?php echo SITEURL; ?>admin/add-item.php" class="btn-primary">Post Item</a>
 
                 <br /><br /><br />
@@ -103,7 +103,7 @@
                                             {
                                                
                                                 ?>
-                                                <img src="<?php echo SITEURL; ?>images/food/<?php echo $image_name; ?>" width="100px">
+                                                <img src="<?php echo SITEURL; ?><?php echo $image_name; ?>" width="100px">
                                                 <?php
                                             }
                                         ?>
