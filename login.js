@@ -5,8 +5,8 @@ function lform(){
     if (email==null || email==""){  
       alert("Email can't be blank");  
       return false;  
-    }else if(password.length<6){  
-      alert("Password can't be blank.");  
+    }else if(password.length < 6){  
+      alert("Please enter your password");  
       return false;  
       }  
     }  

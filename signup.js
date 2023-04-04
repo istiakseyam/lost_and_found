@@ -17,9 +17,9 @@ function sform() {
     alert("Email can't be blank");
     return false;
   } else if (
-    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(signup.email.value)
+    !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(signup.email.value)
   ) {
-    return true;
+    return false;
   }
 
   //phone
@@ -28,6 +28,7 @@ function sform() {
     return false;
   } else if (!/^[0-9]+$/.test(signup.phone.value)) {
     alert("Enter numeric character only");
+    return false;
   }
 
   //nid
@@ -36,21 +37,24 @@ function sform() {
     return false;
   } else if (!/^[0-9]+$/.test(signup.nid.value)) {
     alert("Enter numeric character only");
+    return false;
   }
 
   // Password length is between 8-32 chars
   if (fpassword == null || fpassword == "") {
     alert("Password no. can't be blank");
     return false;
-  } else if (fpassword.length < 8 || fpassword.length > 32) {
-    alert("Password length must be between 8-32 chars");
+  } else if (fpassword.length < 6) {
+    alert("Password length must be more than 6 chars");
+    return false;
   }
 
   // Retype password
-  if (fpassword == spassword) {
-    return true;
-  } else {
-    alert("password must be same!");
+  if (spassword == null || spassword == "") {
+    alert("Retype password");
     return false;
-  }
+  } else if(fpassword != spassword) {
+    alert("Retype password correctly");
+    return false;
+  } 
 }
