@@ -1,3 +1,9 @@
+<?php
+require_once 'includes/db_conn.php';
+ //$sql = "SELECT * FROM dash";
+
+ //$result = mysqli_query($conn,$sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,32 +75,35 @@
     <main>
       <h2>Post your item</h2>
 
-      <form action="home.html" method="post">
+      <form action="includes/db_post.php" method="post">
 
         <label for="img">Select image to upload:</label>
-        <input type="file" placeholder="Select image to upload:" name="fileToUpload" id="fileToUpload" required />
-
-        <label for="lnf">Lost/Found</label>
-        <select name="lnf" id="lnf">
-          <option value="lost">Lost</option>
-          <option value="found">Found</option>
-        </select>
+        <input type="file" placeholder="Select image to upload:" name="fileToUpload" id="fileToUpload"  />
+        
 
         <label for="item">Item Type: </label>
         <select name="item" id="item">
-          <option value="volvo">Abstract</option>
-          <option value="saab">Documents</option>
-          <option value="audi">Others</option>
+          <option value="abstract">Abstract</option>
+          <option value="documents">Documents</option>
+          <option value="others">Others</option>
         </select>
 
         <label>Date-Time: </label>
-        <input type="datetime-local" id="datetime">
+        <input type="datetime-local" id="datetime" name="date">
 
         <label>Location: </label>
-        <input type="text" name="address" />
+        <select name="location" id="location">
+          <option value="Plaza">Plaza</option>
+          <option value="Canteen">Canteen</option>
+          <option value="Admin Building">Admin Building</option>
+          <option value="Boys Lounge">Boys Lounge</option>
+          <option value="Girls Lounge">Girls Lounge</option>
+          <option value="SAC Classroom">SAC Classroom</option>
+          <option value="NAC Classroom">NAC Classroom</option>
+        </select>
 
         <label>Description: </label>
-        <input style="height: 150px; font-size: 12pt" ..... type="text" name="password"
+        <input style="height: 150px; font-size: 12pt" ..... type="text" name="description"
           placeholder="i.e, This product is from... " />
         <br>
         <button type="submit">Post</button>

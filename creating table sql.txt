@@ -1,0 +1,24 @@
+CREATE USER 'seyam'@'localhost' IDENTIFIED WITH mysql_native_password AS '***';GRANT ALL PRIVILEGES ON *.* TO 'seyam'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;CREATE DATABASE IF NOT EXISTS `seyam`;GRANT ALL PRIVILEGES ON `seyam`.* TO 'seyam'@'localhost';GRANT ALL PRIVILEGES ON `seyam\_%`.* TO 'seyam'@'localhost';
+Expand Requery Edit Database : Queried time : 0:46:58
+
+
+
+CREATE TABLE Users(
+	 user_name varchar(255) NOT NULL PRIMARY KEY,
+	 email varchar(255) Not null UNIQUE,
+	 pass varchar(128) NOT null);
+
+
+CREATE TABLE Found_items(
+    post_id int(6) PRIMARY KEY AUTO_INCREMENT,
+    user_name varchar(255) not null UNIQUE,
+    item_type varchar(255) not null,
+    location varchar(255) not null,
+    discription varchar(2000),
+    f_date  varchar(500) not null,
+    image varchar(255),
+    Created_At TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (user_name) REFERENCES Users(user_name)
+    	ON DELETE CASCADE 
+        ON UPDATE CASCADE);

@@ -1,0 +1,2 @@
+INSERT INTO Users(user_name, email, pass)
+VALUES ('seyam', 'seyam@gmail.com', '123')
