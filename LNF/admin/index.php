@@ -12,62 +12,29 @@
                         unset($_SESSION['login']);
                     }
                 ?>
-                <br><br>
+             
+             <div class="items">
 
-                <div class="items">
+<div class="product">
+  <h1>3,543</h1>
+  <h3>Total posts</h3>
+</div>
 
+<div class="product">
+  <h1>398</h1>
+  <h3>Spam reports</h3>
+</div>
 
+<div class="product">
+  <h1>1,033</h1>
+  <h3>Claimed Items</h3>
+</div>
 
-                    <?php 
-                       
-                        $sql = "SELECT * FROM tbl_category";
-                     
-                        $res = mysqli_query($conn, $sql);
-                        
-                        $count = mysqli_num_rows($res);
-                    ?>
+</div>
+</div>
+</main>
 
-                  
-                    
-                   <div class="product">
-                   <h3>Category</h3>
-                   <h1><?php echo $count; ?></h1>
-                </div>
-
-                
-                <div class="items">
-                    <?php 
-                    
-                        $sql2 = "SELECT * FROM tbl_item";
-                        
-                        $res2 = mysqli_query($conn, $sql2);
-                       
-                        $count2 = mysqli_num_rows($res2);
-                    ?>
-
-                   
-              
-                    <div class="product">
-                    <h3>Items</h3>
-                    <h1><?php echo $count2; ?></h1>
-                </div>
-
-                <div class="items">
-                    
-                    <?php 
-                      
-                        $sql3 = "SELECT * FROM tbl_location";
-                       
-                        $res3 = mysqli_query($conn, $sql3);
-                        $count3 = mysqli_num_rows($res3);
-                    ?>
-
-                 
-                    <div class="product">
-                    <h3>Location</h3>
-                    <h1><?php echo $count3; ?></h1>
-                </div>
-
+</div>
               
 
                 <div class="clearfix"></div>

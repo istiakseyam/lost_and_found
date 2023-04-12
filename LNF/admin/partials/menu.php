@@ -35,32 +35,32 @@
     <div class="sidebar-menu">
       <ul>
         <li>
-          <a href="index.php">
+          <a href="">
             <span class="icon"><i class="fas fa-home"></i></span>
             <span class="item">Home</span>
           </a>
         </li>
   
         <li>
-          <a href="manage-item.php">
+          <a href="">
             <span class="icon"><i class="fas fa-shopping-basket"></i></span>
             <span class="item">Post Items</span>
           </a>
         </li>
         <li>
-          <a href="manage-category.php">
+          <a href="">
             <span class="icon"><i class="fa fa-get-pocket"></i></span>
             <span class="item">Item Category</span>
           </a>
         </li>
         <li>
-          <a href="manage-location.php">
+          <a href="">
             <span class="icon"><i class="	fas fa-map-marker-alt"></i></span>
             <span class="item">Item Location</span>
           </a>
         </li>
         <li>
-          <a href="manage-claim.php">
+          <a href="">
             <span class="icon"><i class="fas fa-exclamation"></i></span>
             <span class="item">Claim Items</span>
           </a>

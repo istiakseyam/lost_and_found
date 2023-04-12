@@ -19,14 +19,9 @@
     </head>
 
     <body>
-        
-
-
-            <div class="container">
+    <div class="container">
       <nav>
-        <a href="index.html"
-          ><img src="logo.png" alt="lost and found" class="logo"
-        /></a>
+         <a href="index.html"><img src="logo.png" alt="lost and found" class="logo"/></a>
         <ul>
           <li><a href="#">HOME</a></li>
           <li><a href="#">ABOUT</a></li>
@@ -41,22 +36,16 @@
         </div>
       </nav>
 
+            
       <div class="alogin">
-
-           
             <form action="" method="POST" >
             <h1>Admin Login</h1>
-          <p>Please fill in this form to access your account</p>
-
-          <label for="Username"></label>
+            <p>Please fill in this form to access your account</p>
+            <label for="Username"></label>
             <input type="text" name="username" placeholder="Enter Username"><br><br>
-
             <label for="password"></label>
             <input type="password" name="password" placeholder="Enter Password"><br><br>
-
             <button type="submit" name="submit" value="Login" class="btn-primary">Login</button>
-
-
             <p><a href="login.html" class="al"> Not an administrator? </a></p>
             <?php 
                 if(isset($_SESSION['login']))
@@ -72,15 +61,10 @@
                 }
             ?>
             
-            </form>
-       
-
-            
+            </form>    
         </div>
-
     </body>
 </html>
-
 <?php 
 
   
