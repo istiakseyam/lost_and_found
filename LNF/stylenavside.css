@@ -4,18 +4,19 @@
   list-style-type: none;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 .sidebar {
   position: fixed;
-  width: 290px;
+  width: 270px;
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(bg.jpeg);
 }
 
 .main-content {
-  margin-left: 280px;
+  margin-left: 270px;
   transition: margin-left 300ms;
 }
 

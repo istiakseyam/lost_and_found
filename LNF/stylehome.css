@@ -11,106 +11,122 @@
 }
 
 main {
-  margin: 10px;
-  padding: 10px;
+  margin: 100px;
+  padding: 5px;
   background: #ffffff;
   min-height: calc(100vh-90px);
   max-width: 1000px;
 }
 
-.container {
-  width: 80vw;
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
+
 
 .header {
   width: 100%;
   text-align: center;
 }
 
-.header h1 {
-  font-size: 4em;
-  text-transform: uppercase;
-  color: var(--textColor);
+.main-content h1 {
+  font-size: 20px;
+  text-align: center;
+  margin-left:-989px;
 }
 
 main .header h2{
   color: #000;
 }
 
-.items {
+.wrapper{
+  padding: 1%;
+  width: 700%;
+  text-align: center;
+  
+
+}
+
+.text-center{
+  text-align: center;
+}
+.clearfix{
+  float: none;
+  clear: both;
+}
+
+.tbl-full{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
   width: 100%;
-  align-self: center;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.product {
-  position: relative;
-  width: 230px;
-  height: 100%;
-  box-shadow: 0 5px 5px #8a8a8a;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0 20px 20px;
-  border-radius: 10px;
-  transition: 0.3s;
+  margin-left:-100px;
   text-align: center;
-  place-content: center;
 
 }
+.tbl-full tr:nth-child(even){background-color: #f2f2f2;}
 
-.product:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 5px 5px #8a8a8a;
-  border: 1px solid #009688;
+.tbl-full tr:hover {background-color: #ddd;}
 
-}
-.product h3 {
+
+
+table tr th{
+  border: 1px solid #ddd;
+  padding: 8px;
   text-align: center;
-  padding: 10px 0 5px 0;
+
 }
 
-.product p {
-  font-size: 13px;
-  line-height: 25px;
-  padding-bottom: 10px;
+.tbl-full th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+  text-align: center;
 }
 
-.image {
-  display: grid;
-  place-content: center;
+.btn-primary{
+  background-color: #00a153;
+  padding: 1%;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  
+}
+.btn-primary:hover{
+  background-color: #757deb;
 }
 
-.image img {
-  width: 200px;
+.btn-secondary{
+  background-color: #7bed9f;
+  padding: 1%;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn-secondary:hover{
+  background-color: #2ed573;
+}
+
+.btn-danger{
+  background-color: #ff6b81;
+  padding: 1%;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn-danger:hover{
+  background-color: #ff4757;
+}
+
+.success{
+  color: #2ed573;
+}
+.error{
+  color: #ff4757;
 }
 
 
-.claim {
-  position: relative;
-}
 
-.claim button {
-  padding: 7px;
-  width: 100px;
-  border: 1px solid #009688;
-  border-radius: 20px;
-  background-color: #009688;
-  color: #fff;
-  font-size: 13px;
-  cursor: pointer;
-  transition: 0.5s;
-}
 
-.claim button:hover {
-  transform: scale(1);
-  background-color: transparent;
-  color: #009688;
-}
+
+  
+
+
+

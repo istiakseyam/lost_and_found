@@ -1,7 +1,6 @@
 <?php 
 
-include('../config/constants.php'); 
-include('login-check.php');
+    include('constants.php'); 
   
 
 ?>
@@ -17,10 +16,10 @@ include('login-check.php');
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <link rel="stylesheet"
     href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-   
-    <link rel="stylesheet" href="../css/stylenavside.css">
-    <link rel="stylesheet" href="../css/admin.css">
-    <link rel="stylesheet" href="../css/stylepost.css">
+  <link rel="stylesheet" href="stylehome.css">
+  <link rel="stylesheet" href="stylenavside.css">
+  <link rel="stylesheet" href="stylepost.css">
+
   
 </head>
 
@@ -35,13 +34,13 @@ include('login-check.php');
   <div class="sidebar-menu">
     <ul>
       <li>
-        <a href="index.php">
+        <a href="manage-item.php">
           <span class="icon"><i class="fas fa-home"></i></span>
           <span class="item">Home</span>
         </a>
       </li>
       <li>
-        <a href="manage-item.php">
+        <a href="add-item.php">
           <span class="icon"><i class="fas fa-file"></i></span>
           <span class="item">Post Items</span>
         </a>
@@ -58,12 +57,6 @@ include('login-check.php');
           <span class="item">My Claims</span>
         </a>
       </li>
-      <li>
-        <a href="logout.php">
-          <span class="icon"><i class="fas fa-arrow-right"></i></span>
-          <span class="item">Logout</span>
-        </a>
-      </li>
 
      
     </ul>
@@ -74,26 +67,33 @@ include('login-check.php');
   <div class="main-content">
     <header>
       <h2>
-
         <label for="nav-toggle">
           <span class="las la-bars"></span>
         </label>
-       <h1>Admin Dashboard </h1>
+       
       </h2>
-      
 
-
+      <div class="search">
+        <form action="#">
+          <i class="fas fa-search"></i>
+          <input type="search" placeholder="Search here" />
+        </form>
+      </div>
 
       <div class="user">
         <ul>
           <li>
-            <a href="add-admin.php">
+            <a href="user.html">
               <i class="fas fa-user"></i>
-             
+              <?php  if (isset($_SESSION['username'] )) :  ?>
+    	<a>Welcome <strong><?php echo $_SESSION['username']; ?></strong></a>
+      
+    	
+    <?php endif  ?>
             </a>
           </li>
           <li>
-          
+          <a href="login.php?logout='1'" style="color: red;">logout</a> 
               <i class="fas fa-arrow-right"></i>
             </a>
           </li>

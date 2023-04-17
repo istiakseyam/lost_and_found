@@ -4,6 +4,7 @@
   list-style-type: none;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
 .sidebar {
