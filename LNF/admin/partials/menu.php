@@ -21,6 +21,7 @@ include('login-check.php');
     <link rel="stylesheet" href="../css/stylenavside.css">
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/stylepost.css">
+   
   
 </head>
 
