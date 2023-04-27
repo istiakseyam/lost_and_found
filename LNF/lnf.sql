@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2023 at 06:21 PM
+-- Generation Time: Apr 27, 2023 at 09:02 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -46,7 +46,10 @@ INSERT INTO `found_items` (`id`, `username`, `title`, `description`, `image_name
 (4, 'mrittika', 'bag', 'Found at Canteen', 'Item-Name-4070.jpg', 'abstract', 'canteen', '2023-04-11'),
 (5, 'David', 'Watch', 'Lost at Study Hall', 'Item-Name-8272.jpg', 'abstract', 'studyhall', '2023-04-16'),
 (6, 'mrittika', 'watch', 'Found at Canteen', 'Item-Name-464.jpg', 'abstract', 'canteen', '2023-04-16'),
-(7, 'mrittika', 'watch', 'found at canteen', 'Item-Name-2229.jpg', 'abstract', 'canteen', '2023-04-17');
+(7, 'mrittika', 'watch', 'found at canteen', 'Item-Name-2229.jpg', 'abstract', 'canteen', '2023-04-17'),
+(14, 'mrittika', 'watch', 'found at canteen', 'Item-Name-7844.jpg', 'abstract', 'canteen', '2023-04-17'),
+(15, 'mrittika', 'Bag', 'Found at StudyHall', 'Item-Name-68.jfif', 'abstract', 'studyhall', '2023-04-17'),
+(16, 'harvard', 'dd', 'dd', 'Item-Name-5623.jfif', 'abstract', 'canteen', '2023-04-26');
 
 -- --------------------------------------------------------
 
@@ -120,7 +123,7 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `found_items`
 --
 ALTER TABLE `found_items`
-  MODIFY `id` int(100) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(100) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tbl_admin`
