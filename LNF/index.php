@@ -15,9 +15,9 @@
 <body>
   <div class="container">
     <nav>
-      <a href="index.html"><img src="logo.png" alt="lost and found" class="logo" /></a>
+      <a href="index.php"><img src="logo.png" alt="lost and found" class="logo" /></a>
       <ul>
-        <li><a href="home.html">HOME</a></li>
+        <li><a href="home.php">HOME</a></li>
         <li><a href="#">ABOUT</a></li>
         <li><a href="#">SERVICES</a></li>
         <li><a href="#">CONTACT US</a></li>
@@ -33,7 +33,7 @@
     <main>
       <h1>Lost something?</h1>
       <p>Let us know and we'll look around.</p>
-      <a href="start.html">
+      <a href="start.php">
         <button>Get Started</button>
     </a>
     </main>
