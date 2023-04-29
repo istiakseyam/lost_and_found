@@ -23,16 +23,6 @@ main {
   text-align: center;
 }
 
-.main-content h1 {
-  font-size: 20px;
-  text-align: center;
-  margin-left: -989px;
-}
-
-main .header h2 {
-  color: #000;
-}
-
 .wrapper {
   padding: 1%;
   width: 700%;
@@ -52,7 +42,8 @@ main .header h2 {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  margin-left: -100px;
+  margin-left: -150px;
+  margin-top: 10px;
   text-align: center;
 }
 

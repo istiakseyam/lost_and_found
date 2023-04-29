@@ -86,6 +86,11 @@ header {
   color: #000;
 }
 
+.user a i:hover,
+.search i:hover {
+  color: #009688;
+}
+
 .search {
   position: relative;
   height: 40px;

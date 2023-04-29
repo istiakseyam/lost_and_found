@@ -16,6 +16,7 @@
 
 </head>
 
+
 <input type="checkbox" id="nav-toggle">
 <div class="sidebar">
   <div class="sidebar-brand">
@@ -76,19 +77,18 @@
             <a href="user.php">
               <i class="fas fa-user"></i>
               <?php  if (isset($_SESSION['username'] )) :  ?>
-    	<a>Welcome <strong><?php echo $_SESSION['username']; ?></strong></a>
-      
-    	
-    <?php endif  ?>
-            </a>
-          </li>
-          <li>
-          <a href="login.php?logout='1'" style="color: red;">logout</a> 
+                <a>Welcome <strong><?php echo $_SESSION['username']; ?></strong></a>
+                <?php endif  ?>
+              </a>
+            </li>
+             <li>
+              <a href="login.php?logout='1'" style="color: red;">logout</a>
               <i class="fas fa-arrow-right"></i>
             </a>
           </li>
         </ul>
       </div>
+
     </header>
-  </body>
+</body>
 </html>
