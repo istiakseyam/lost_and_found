@@ -1,10 +1,4 @@
-<?php 
-
-    include('constants.php'); 
-  
-
-?>
-
+<?php include('constants.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +14,6 @@
   <link rel="stylesheet" href="stylenavside.css">
   <link rel="stylesheet" href="stylepost.css">
 
-  
 </head>
 
 <input type="checkbox" id="nav-toggle">
@@ -57,8 +50,6 @@
           <span class="item">My Claims</span>
         </a>
       </li>
-
-     
     </ul>
   </div>
 </div>
@@ -70,7 +61,6 @@
         <label for="nav-toggle">
           <span class="las la-bars"></span>
         </label>
-       
       </h2>
 
       <div class="search">
@@ -83,7 +73,7 @@
       <div class="user">
         <ul>
           <li>
-            <a href="user.html">
+            <a href="user.php">
               <i class="fas fa-user"></i>
               <?php  if (isset($_SESSION['username'] )) :  ?>
     	<a>Welcome <strong><?php echo $_SESSION['username']; ?></strong></a>

@@ -2,11 +2,10 @@
 
 <?php 
   
-
   if (!isset($_SESSION['username'])) {
-  
   	header('location: login.php');
   }
+
   if (isset($_GET['logout'])) {
   	session_destroy();
   	unset($_SESSION['username']);
@@ -15,20 +14,10 @@
 ?>
 
 
-
-
-<div class="main-content">
- 
-    
-    <br /><br />
+<div class="main-content"><br>
         <h1>Lost and Found Items</h1>
-
-        <br /><br />
-
-              
-                
-
-                <?php 
+        
+        <?php 
                     if(isset($_SESSION['add']))
                     {
                         echo $_SESSION['add'];
