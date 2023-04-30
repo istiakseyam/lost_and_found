@@ -87,7 +87,7 @@ header {
 }
 
 .user a i:hover,
-.search i:hover {
+.search button i:hover {
   color: #009688;
 }
 
@@ -98,9 +98,11 @@ header {
   width: 100%;
   border: 1px solid #8a8a8a;
   border-radius: 30px;
+  cursor: pointer;
 }
 
-.search i {
+.search button{
+  color: #fff;
   padding: 11px 10px;
   font-size: 20px;
 }

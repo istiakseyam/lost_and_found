@@ -56,39 +56,42 @@
 </div>
 
 
-  <div class="main-content">
-    <header>
-      <h2>
-        <label for="nav-toggle">
-          <span class="las la-bars"></span>
-        </label>
-      </h2>
+<div class="main-content">
+  <header>
+    <h2>
+      <label for="nav-toggle">
+        <span class="las la-bars"></span>
+      </label>
+    </h2>
 
-      <div class="search">
-        <form action="#">
-          <i class="fas fa-search"></i>
-          <input type="search" placeholder="Search here" />
-        </form>
-      </div>
+    <div class="search">
+      <form method="post">
+        <button class="fas fa-search" name="search"><i></i></button>
+        <input type="search" placeholder="Search here" name="search" />
+      </form>
+    </div>
 
-      <div class="user">
-        <ul>
-          <li>
-            <a href="user.php">
-              <i class="fas fa-user"></i>
-              <?php  if (isset($_SESSION['username'] )) :  ?>
-                <a>Welcome <strong><?php echo $_SESSION['username']; ?></strong></a>
-                <?php endif  ?>
-              </a>
-            </li>
-             <li>
-              <a href="login.php?logout='1'" style="color: red;">logout</a>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+    <div class="user">
+      <ul>
+        <li>
+          <a href="user.php">
+            <i class="fas fa-user"></i>
+            <?php if (isset($_SESSION['username'])): ?>
+              <a>Welcome <strong>
+                  <?php echo $_SESSION['username']; ?>
+                </strong></a>
+            <?php endif ?>
+          </a>
+        </li>
+        <li>
+          <a href="login.php?logout='1'" style="color: red;">logout</a>
+          <i class="fas fa-arrow-right"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-    </header>
-</body>
+  </header>
+  </body>
+
 </html>
