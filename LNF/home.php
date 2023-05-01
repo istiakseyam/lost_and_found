@@ -1,5 +1,34 @@
 <?php include('menu.php'); ?>
 
+<!DOCTYPE html>
+<?php
+	setcookie("group8", "group 8", time() + 2 * 24 * 60 * 60);
+?>
+<html>
+<body>
+	<?php
+	if (isset($_COOKIE["group8"]))
+	{
+		echo "Cookie of " . $_COOKIE["group8"];
+	}
+	else
+	{
+		echo "No cookie for grp8.";
+	}
+	?>
+	<p>
+		<strong>Note:</strong>
+		You might have to reload the page
+		to see the value of the cookie.
+	</p>
+
+</body>
+</html>
+
+
+
+
+
 <?php
 if (!isset($_SESSION['username'])) {
     header('location: login.php');
