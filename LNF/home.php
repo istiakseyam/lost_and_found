@@ -56,12 +56,12 @@ if (isset($_GET['logout'])) {
         </tr>
 
         <?php
-         $sql = "SELECT * FROM found_items";
-         $res = mysqli_query($conn, $sql);
-         $count = mysqli_num_rows($res);
-         $sn = 1;
+        $sql = "SELECT * FROM found_items";
+        $res = mysqli_query($conn, $sql);
+        $count = mysqli_num_rows($res);
+        $sn = 1;
 
-         if ($count > 0) {
+        if ($count > 0) {
             while ($row = mysqli_fetch_assoc($res)) {
                 $id = $row['id'];
                 $username = $row['username'];
@@ -71,44 +71,44 @@ if (isset($_GET['logout'])) {
                 $category = $row['category'];
                 $location = $row['location'];
                 $date = $row['date'];
-        ?>
-
-        <tr>
-            <td>
-                <?php echo $sn++; ?>
-            </td>
-            <td>
-                <?php echo $username; ?>
-            </td>
-            <td>
-                <?php echo $title; ?>
-            </td>
-            <td>
-                <?php echo $description; ?>
-            </td>
-            <td>
-                <?php
-                    if ($image_name == "") {
-                        echo "<div class='error'>Image not Added.</div>";
-                    } else {
-                        ?>
-                        <img src="<?php echo SITEURL; ?>image/<?php echo $image_name; ?>" width="100px"><?php
-                        }
                 ?>
-            </td>
-            <td>
-                <?php echo $category; ?>
-            </td>
-            <td>
-                <?php echo $location; ?>
-            </td>
-            <td>
-                <?php echo $date, "Y/m/d ";
-                ; ?>
-            </td>
-             
-            <?php
-             }
+
+                <tr>
+                    <td>
+                        <?php echo $sn++; ?>
+                    </td>
+                    <td>
+                        <?php echo $username; ?>
+                    </td>
+                    <td>
+                        <?php echo $title; ?>
+                    </td>
+                    <td>
+                        <?php echo $description; ?>
+                    </td>
+                    <td>
+                        <?php
+                        if ($image_name == "") {
+                            echo "<div class='error'>Image not Added.</div>";
+                        } else {
+                            ?>
+                            <img src="<?php echo SITEURL; ?>image/<?php echo $image_name; ?>" width="100px"><?php
+                        }
+                        ?>
+                    </td>
+                    <td>
+                        <?php echo $category; ?>
+                    </td>
+                    <td>
+                        <?php echo $location; ?>
+                    </td>
+                    <td>
+                        <?php echo $date, "Y/m/d ";
+                        ; ?>
+                    </td>
+
+                    <?php
+            }
         } else {
             echo "<tr> <td colspan='7' class='error'> Item not Added Yet. </td> </tr>";
         }
@@ -118,5 +118,37 @@ if (isset($_GET['logout'])) {
 
     </table>
 </div>
+
+<table>
+        <tr>
+            <td id="table-data">
+
+            </td>
+        </tr>
+        </table>
+
+
+<script type="text/javascript">
+        $(document).ready(function(){
+            //live search
+            $("#search").on("keyup",function(){
+                var search_term = $(this).val();
+
+                $.ajax({
+                    url:"ajaxlivesearch.php",
+                    type:"POST",
+                    data:{search:search_term},
+                    success:function(data){
+                        $("#table-data").html(data);
+                        
+
+                    }
+
+                });
+
+            });
+        });
+    </script>
+
 
 </div>
