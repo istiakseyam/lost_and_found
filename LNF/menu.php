@@ -66,11 +66,11 @@
 
         <div class="search">
             <form method="post">
-                <input type="search" placeholder="Search here" name="search" id="search" autocomplete="off"/>
+                <input type="search" placeholder="Search here" name="search" id="search" autocomplete="off" />
             </form>
         </div>
 
-       
+
         <div class="user">
             <ul>
                 <li>
@@ -92,11 +92,6 @@
         </div>
 
     </header>
-
-  
-
-
-
     </body>
 
 </html>

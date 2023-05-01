@@ -54,6 +54,13 @@ if (isset($_GET['logout'])) {
             <th>location</th>
             <th>Date</th>
         </tr>
+        <tbody id="output">
+            <tr>
+                <td>0</td>
+                <td>mrittika</td>
+                <td>bag</td>
+            </tr>
+        </tbody>
 
         <?php
         $sql = "SELECT * FROM found_items";
@@ -115,40 +122,33 @@ if (isset($_GET['logout'])) {
 
         ?>
 
-
     </table>
+
+
 </div>
 
-<table>
-        <tr>
-            <td id="table-data">
-
-            </td>
-        </tr>
-        </table>
 
 
 <script type="text/javascript">
-        $(document).ready(function(){
-            //live search
-            $("#search").on("keyup",function(){
-                var search_term = $(this).val();
+    $(document).ready(function () {
+        //live search
+        $("#search").keypress(function () {
 
-                $.ajax({
-                    url:"ajaxlivesearch.php",
-                    type:"POST",
-                    data:{search:search_term},
-                    success:function(data){
-                        $("#table-data").html(data);
-                        
-
-                    }
-
-                });
+            $.ajax({
+                url: "search.php",
+                type: "POST",
+                data: {
+                    name: $("#search").val(),
+                },
+                success: function (data) {
+                    $("#output").html(data);
+                }
 
             });
+
         });
-    </script>
+    });
+</script>
 
 
 </div>
