@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,9 +22,9 @@
         <li><a href="#">CONTACT US</a></li>
       </ul>
       <div class="search">
-        <form action="#">
-          <input type="search" placeholder="Search..." name="search" />
-          <i class="fa fa-search"></i>
+        <form method="post">
+          <input type="text" placeholder="Search..." name="search" />
+          <input type="submit" name="submit"><i class="fa fa-search"></i>
         </form>
       </div>
     </nav>
@@ -35,7 +34,7 @@
       <p>Let us know and we'll look around.</p>
       <a href="start.php">
         <button>Get Started</button>
-    </a>
+      </a>
     </main>
   </div>
 
@@ -45,3 +44,36 @@
 </body>
 
 </html>
+
+<?php
+
+$conn = new PDO ("mysql:host=localhost;dbname=lnf", 'root', ''); //Database Connection
+
+if(isset($_POST["submit"])){
+  $str=$_POST["search"];
+  $sth=$conn->prepare("SELECT * FROM found_items WHERE title = '$str'");
+
+  $str->setFetchMode(PDO:: FETCH_OBJ);
+  $str->execute();
+
+  if($row=$sth->fetch()){
+    ?>
+    <br><br><br>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>description</th>
+      </tr>
+      <tr>
+        <td><?php echo $row->Title; ?></td>
+      </tr>
+    </table>
+
+  <?php
+  }
+
+  else{
+    echo "error";
+  }
+  
+}

@@ -2,27 +2,26 @@
 
 <!DOCTYPE html>
 <?php
-	setcookie("group8", "group 8", time() + 2 * 24 * 60 * 60);
+setcookie("group8", "group 8", time() + 2 * 24 * 60 * 60);
 ?>
 <html>
+
 <body>
-	<?php
-	if (isset($_COOKIE["group8"]))
-	{
-		echo "Cookie of " . $_COOKIE["group8"];
-	}
-	else
-	{
-		echo "No cookie for grp8.";
-	}
-	?>
-	<p>
-		<strong>Note:</strong>
-		You might have to reload the page
-		to see the value of the cookie.
-	</p>
+    <?php
+    if (isset($_COOKIE["group8"])) {
+        echo "Cookie of " . $_COOKIE["group8"];
+    } else {
+        echo "No cookie for grp8.";
+    }
+    ?>
+    <p>
+        <strong>Note:</strong>
+        You might have to reload the page
+        to see the value of the cookie.
+    </p>
 
 </body>
+
 </html>
 
 
@@ -73,22 +72,47 @@ if (isset($_GET['logout'])) {
     ?>
 
     <table class="tbl-full">
-        <tr>
-            <th>S.N.</th>
-            <th>Username</th>
-            <th>Item Name</th>
-            <th>Description</th>
-            <th>Select Item Image</th>
-            <th>category</th>
-            <th>location</th>
-            <th>Date</th>
-        </tr>
-        <tbody id="output">
+        <thead>
             <tr>
-                <td>0</td>
-                <td>mrittika</td>
-                <td>bag</td>
+                <th>S.N.</th>
+                <th>Username</th>
+                <th>Item Name</th>
+                <th>Description</th>
+                <th>Select Item Image</th>
+                <th>category</th>
+                <th>location</th>
+                <th>Date</th>
             </tr>
+        </thead>
+        <tbody>
+            <?php
+            $conn = mysqli_connect("localhost", "root", "", "lnf") or die(mysqli_error()); //Database Connection
+
+            if(isset($_GET['search']))
+            {
+                $filtervalues = $_GET['search'];
+                $query = "SELECT * FROM found_items WHERE title LIKE '%$filtervalues%' ";
+                $query_run = mysqli_query($conn, $query);
+
+                if(mysqli_num_rows($query_run)>0)
+                {
+                    foreach($query_run as $items)
+                    {
+                        ?>
+                        <tr>
+                            <td><?= $items['id']; ?></td>
+                            <td><?= $items['title']; ?></td>
+                            <td><?= $items['description']; ?></td>
+                        </tr>
+                        <?php
+                    }
+
+                }else{
+                    ?> <h3>no record found</h3>
+                    <?php
+                }
+            }
+            ?>
         </tbody>
 
         <?php
@@ -155,29 +179,6 @@ if (isset($_GET['logout'])) {
 
 
 </div>
-
-
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        //live search
-        $("#search").keypress(function () {
-
-            $.ajax({
-                url: "search.php",
-                type: "POST",
-                data: {
-                    name: $("#search").val(),
-                },
-                success: function (data) {
-                    $("#output").html(data);
-                }
-
-            });
-
-        });
-    });
-</script>
 
 
 </div>

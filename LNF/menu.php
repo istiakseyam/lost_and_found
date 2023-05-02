@@ -65,8 +65,12 @@
         </h2>
 
         <div class="search">
-            <form method="post">
-                <input type="search" placeholder="Search here" name="search" id="search" autocomplete="off" />
+            <form action="" method="GET">
+                <input type="text" placeholder="Search..." 
+                value="<?php if(isset($_GET['search']))
+                {echo $_GET['search']; } ?>"
+                name="search" id="search"/>
+                <button type="submit">Search</button>
             </form>
         </div>
 
