@@ -87,28 +87,47 @@ if (isset($_GET['logout'])) {
         <tbody>
             <?php
             $conn = mysqli_connect("localhost", "root", "", "lnf") or die(mysqli_error()); //Database Connection
-
-            if(isset($_GET['search']))
-            {
+            
+            if (isset($_GET['search'])) {
                 $filtervalues = $_GET['search'];
-                $query = "SELECT * FROM found_items WHERE title LIKE '%$filtervalues%' ";
+                $query = "SELECT * FROM found_items WHERE title LIKE '%$filtervalues%' OR location LIKE '%$filtervalues%' OR description LIKE '%$filtervalues%' OR date LIKE '%$filtervalues%'";
                 $query_run = mysqli_query($conn, $query);
 
-                if(mysqli_num_rows($query_run)>0)
-                {
-                    foreach($query_run as $items)
-                    {
+                if (mysqli_num_rows($query_run) > 0) {
+                    foreach ($query_run as $items) {
                         ?>
                         <tr>
-                            <td><?= $items['id']; ?></td>
-                            <td><?= $items['title']; ?></td>
-                            <td><?= $items['description']; ?></td>
+                            <td>
+                                <?= $items['id']; ?>
+                            </td>
+                            <td>
+                                <?= $items['username']; ?>
+                            </td>
+                            <td>
+                                <?= $items['title']; ?>
+                            </td>
+                            <td>
+                                <?= $items['description']; ?>
+                            </td>
+                            <td>
+                                <?= $items['image_name']; ?>
+                            </td>
+                            <td>
+                                <?= $items['category']; ?>
+                            </td>
+                            <td>
+                                <?= $items['location']; ?>
+                            </td>
+                            <td>
+                                <?= $items['date']; ?>
+                            </td>
                         </tr>
                         <?php
                     }
 
-                }else{
-                    ?> <h3>no record found</h3>
+                } else {
+                    ?>
+                    <h3>no record found</h3>
                     <?php
                 }
             }

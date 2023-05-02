@@ -42,38 +42,3 @@
     <p>All Rights Reserved ~ Designed by Group 08</p>
   </footer>
 </body>
-
-</html>
-
-<?php
-
-$conn = new PDO ("mysql:host=localhost;dbname=lnf", 'root', ''); //Database Connection
-
-if(isset($_POST["submit"])){
-  $str=$_POST["search"];
-  $sth=$conn->prepare("SELECT * FROM found_items WHERE title = '$str'");
-
-  $str->setFetchMode(PDO:: FETCH_OBJ);
-  $str->execute();
-
-  if($row=$sth->fetch()){
-    ?>
-    <br><br><br>
-    <table>
-      <tr>
-        <th>Title</th>
-        <th>description</th>
-      </tr>
-      <tr>
-        <td><?php echo $row->Title; ?></td>
-      </tr>
-    </table>
-
-  <?php
-  }
-
-  else{
-    echo "error";
-  }
-  
-}
