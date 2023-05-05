@@ -34,19 +34,19 @@
                 </a>
             </li>
             <li>
-                <a href="add-item.php">
+                <a href="post.php">
                     <span class="icon"><i class="fas fa-file"></i></span>
                     <span class="item">Post Items</span>
                 </a>
             </li>
             <li>
-                <a href="sale.html">
+                <a href="sale.php">
                     <span class="icon"><i class="fas fa-shopping-basket"></i></span>
                     <span class="item">Items for Sale</span>
                 </a>
             </li>
             <li>
-                <a href="claim.html">
+                <a href="claim.php">
                     <span class="icon"><i class="fas fa-exclamation"></i></span>
                     <span class="item">My Claims</span>
                 </a>
@@ -66,10 +66,9 @@
 
         <div class="search">
             <form action="" method="GET">
-                <input type="text" placeholder="Search..." 
-                value="<?php if(isset($_GET['search']))
-                {echo $_GET['search']; } ?>"
-                name="search" id="search"/>
+                <input type="text" placeholder="Search..." value="<?php if (isset($_GET['search'])) {
+                    echo $_GET['search'];
+                } ?>" name="search" id="search" />
                 <button type="submit">Search</button>
             </form>
         </div>
