@@ -18,7 +18,7 @@
 <body>
   <div class="container">
     <nav>
-      <a href="index.html"
+      <a href="index.php"
         ><img src="logo.png" alt="lost and found" class="logo"
       /></a>
       <ul>

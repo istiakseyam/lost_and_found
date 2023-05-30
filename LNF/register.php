@@ -1,5 +1,41 @@
 
-<?php include('server.php') ?>
+<?php
+
+include 'config.php';
+
+if(isset($_POST['submit'])){
+
+   $username = mysqli_real_escape_string($conn, $_POST['username']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $password = mysqli_real_escape_string($conn, $_POST['password']);
+   $cpass = mysqli_real_escape_string($conn, $_POST['cpass']);
+
+   
+   $select = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$password' ") or die('query failed');
+
+   if(mysqli_num_rows($select) > 0){
+      $message[] = 'user already exist'; 
+   }else{
+      if($password != $cpass){
+         $message[] = 'confirm password not matched!';
+      }
+         else{
+            $insert = mysqli_query($conn, "INSERT INTO `users`(username, email, password) VALUES('$username', '$email', '$password')") or die('query failed');
+            if($insert){
+              
+               $message[] = 'registered successfully!';
+               header('location:login.php');
+            }else{
+               $message[] = 'registeration failed!';
+            }
+         }
+      }
+   
+   }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,8 +52,9 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-
-    <body>
+<body>
+   
+<body>
     <div class="container">
       <nav>
         <a href="index.html"
@@ -38,18 +75,25 @@
       </nav>
 
       <div class="signup">
-      <form method="post" action="signup.php">
-      <?php include('errors.php'); ?>
           <h1>Create Account</h1>
           <p>Please fill in this form to create an account</p>
 
 
-            <label for="username"></label>
+
+   <form action="" method="post" enctype="multipart/form-data">
+      <?php
+      if(isset($message)){
+         foreach($message as $message){
+            echo '<div class="message">'.$message.'</div>';
+         }
+      }
+      ?>
+      <label for="username"></label>
           <input
             type="text"
             placeholder="Name"
             name="username"
-            value="<?php echo $username; ?>" >
+            required>
           
 
           <label for="email"></label>
@@ -57,38 +101,29 @@
             type="text"
             placeholder="Email"
             name="email"
-            value="<?php echo $email; ?>">
+            required>
      
 
-          <label for="phone"></label>
-          <input
-            type="text"
-            placeholder="Contact no."
-            name="phone"
-            value="<?php echo $phone; ?>" >
-          
-
-          <label for="nid"></label>
-          <input type="text" placeholder="NID" name="nid" value="<?php echo $nid; ?>" >
 
           <label for="password"></label>
           <input
             type="password"
             placeholder="Password"
-            name="password_1"
+            name="password"
             
-          >
+            required>
 
           <label for="password"></label>
           <input
             type="password"
             placeholder="Confirm Password"
-            name="password_2"
-          >
+            name="cpass"
+            required>
 
-          <button type="submit"class="btn" name="reg_user">Register</button></button>
+          <button type="submit"class="btn" name="submit" value="register now">Signup </button>
+          
 
-          <p>Already have account? <a href="login.php" class="l">LOGIN</a></p>
+          <p>Already have account? <a href="login.php" class="login.php">LOGIN</a></p>
         </form>
       </div>
     </div>
@@ -100,5 +135,8 @@
       <p>All Rights Reserved ~ Designed by Group 08</p>
     </footer>
 
-  </body>
+ 
+
+
+</body>
 </html>

@@ -1,8 +1,8 @@
-<?php include('partials/menu.php'); ?>
+<?php include('amenu.php'); ?>
 
-<div class="main-content">
-    <div class="wrapper">
-        <h1>Add Admin</h1>
+<main>
+    <h2>Add Admin</h2>
+    <br>
 
         <br><br>
 
@@ -39,7 +39,7 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2">
+                    <td>
                         <input type="submit" name="submit" value="Add Admin" class="btn-secondary">
                     </td>
                 </tr>

@@ -1,4 +1,4 @@
-<?php include('partials/menu.php'); ?>
+<?php include('amenu.php'); ?>
 
 <div class="main-content">
  

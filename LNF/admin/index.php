@@ -1,5 +1,10 @@
 
-<?php include('partials/menu.php'); ?>
+<?php
+include("amenu.php");
+include("cookie.php");
+include("login-check.php");
+?>
+
 
 
               
